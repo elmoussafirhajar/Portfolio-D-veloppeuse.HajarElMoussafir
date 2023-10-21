@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Hajar El moussafir" description="About Hajar El moussafir">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Merci d'être passée. Lisez ci-dessous pour en savoir plus sur moi et mon parcours."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/stock-hajar.jpg"
+					alt="img"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						Je suis une développeuse débutante, diplômée en développement web full stack de l'ISTA Agadir.
+						 Mon parcours académique m'a permis d'acquérir une solide base
+						  de compétences en programmation et en développement web. 
+					</p>
+					<p>
+						Passionnée par la création numérique, j'ai choisi de me spécialiser en développement web pour
+						 donner vie à des idées et des projets à travers des applications web interactives.
+						  Ma formation m'a permis de maîtriser les bases du développement web, 
+						  et je suis déterminée à continuer d'apprendre et de grandir dans ce domaine en constante évolution
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p> Diplôme De Développement Digital Option Web Full Stack En Institut Supérieur de Technologie Appliquée ISTA TADDART AGADIR.</p>
+					<p> Baccalauréat,Science de la vie et de terre Lycée Fayçal Ben Abdelaziz.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>Organisée , Communication , sérieuse , Travail en équipe , Respect des temps , Patience , Empathie</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
